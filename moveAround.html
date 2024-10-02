@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freely Move</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #container{
+            width: 150px;
+            height: 150px;
+            background-color: blanchedalmond;
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            border: 2px solid brown;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">Rock-Paper-Scissor</h1>
+        <div id="choices">
+            <button>🪨</button>
+            <button>📃</button>
+            <button>✂️</button>
+        </div>
+        <div class="user">User:</div>
+        <div class="computer">Computer:</div>
+        <div class="result">Result</div>
+        <script></script>
+        
+    <div id="container">Move 😁</div>
+
+    <script>
+        const move=10;
+        const box=document.getElementById("container");
+        let x=0;
+        let y=0;
+
+        document.addEventListener("keydown",(event)=>{
+            if(event.key.startsWith("Arrow")){
+
+                event.preventDefault();
+                
+                switch(event.key){
+
+                    case "ArrowUp":
+                        y-=move;
+                        break;
+                    case "ArrowDown":
+                        y+=move;
+                        break;
+                    case "ArrowLeft":
+                        x-=move;
+                        break;
+                    case "ArrowRight":
+                        x+=move;
+                        break;
+
+                }
+
+                box.style.top=`${y}px`;
+                box.style.left=`${x}px`;
+            }
+        })
+    </script>
+</body>
+</html>

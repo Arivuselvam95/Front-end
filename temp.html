@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMP CAL</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        form{
+            height: 300px;
+            padding: 10px;
+            background-color: lightsalmon;
+            border: 2px solid brown;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            transition: all 1.5s ease-out;
+        }
+        form:hover{
+            box-shadow: 5px 5px 5px brown;
+        }
+        #submit{
+            background-color: blanchedalmond;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Temperature converter</h1>
+        <input type="number" id="temp" placeholder="Enter any temperature" style="padding: 5px; border-radius: 5px; height: 25px;">
+        <br><br>
+
+        <input type="radio" id="toFah" name=""unit>
+        <label for="toFah">Celcius to Fahrenheit</label>
+        <br>
+        <br>
+        <input type="radio" id="toCel" name=""unit>
+        <label for="toCel"> Fahrenheit to Celcius</label>
+        <br>
+        <br>
+
+        <button type="button" id="submit">Submit</button>
+        <p id="result"></p>
+    </form>
+
+    <script src="date.js" >
+        const temp=document.getElementById("temp");
+        const toFah=document.getElementById("toFah");
+        const toCel=document.getElementById("toCel");
+        const result=document.getElementById("result");
+
+        document.getElementById("submit").onclick=function(){
+            if(toFah.checked){
+                let fah=temp.value*9/5+32;
+                result.textContent=`Fahreheit:${fah}`;
+            }else if(toCel.checked){
+                let celc=(temp.value-32)*5/9;
+                result.textContent=`Celcius:${celc}`;
+            }else{
+                result.textContent="select convertion";
+            }
+        }
+    </script>
+    
+</body>
+</html>
