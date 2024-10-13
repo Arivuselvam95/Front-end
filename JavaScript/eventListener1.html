@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smily</title>
+    <style>
+        #container{
+            background-color: aquamarine;
+            height: 200px;
+            width: 300px;
+            font-size: 3.5rem;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">Smile... 😊</div>
+    
+    <script>
+        const box=document.getElementById("container");
+
+        box.addEventListener("click",()=>{
+            box.textContent="ouch!!!   😒";
+            box.style.backgroundColor="yellow";
+        });
+
+        box.addEventListener("mouseover",(event)=>{
+            box.textContent="don't touch  😡";
+            event.target.style.backgroundColor="tomato";
+        });
+
+        box.addEventListener("mouseout",()=>{
+            box.textContent="Smile... 😊";
+            box.style.backgroundColor="aquamarine";
+        });
+
+    </script>
+    
+</body>
+</html>
